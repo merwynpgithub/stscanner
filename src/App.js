@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Toggle from './components/Toggle';
 import Main from './components/Main';
 import { ThemeContext } from './context';
@@ -9,10 +9,19 @@ import Metrics from './components/Metrics';
 import ChartList from './components/ChartList';
 import Analysis from './components/Analysis';
 
+import axios from 'axios';
+
 function App() {
   const { search, setSearch, handleClick, error, oview, inc, price, cf } = useApp();
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+
+  //make an axios req to pass name to intro and start heroku server
+  const [name, setName] = useState("");
+  useEffect(() => {
+    axios.get("/title")
+    .then(res => setName(res.data.title));
+  }, [])
 
   //check
   let cprice = 0;
@@ -25,7 +34,7 @@ function App() {
   return (
     <div style={{height: "150vh",backgroundColor: darkMode ? "#222" : "white", color: darkMode && "white", transition: "0.3s"}}>
       <Toggle />
-      <Intro />
+      <Intro name={name}/>
       <Main search={search} setSearch={setSearch} handleClick={handleClick} error={error} />
       {cprice !== 0 && <Metrics oview={oview} price={cprice} />}
       {cprice !== 0 && incCheck !== 0 && cfCheck!== 0 && <ChartList oview={oview} inc={inc} price={price} cf={cf} />}

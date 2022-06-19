@@ -1,12 +1,5 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import './styles/intro.css';
-function Intro() {
-  const [name, setName] = useState("");
-  useEffect(() => {
-    axios.get("/title")
-    .then(res => setName(res.data.title));
-  }, [])
+function Intro({ name }) {
   return (
     <div className="intro">
       <h2>{name}</h2>
