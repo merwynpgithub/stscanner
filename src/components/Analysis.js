@@ -6,7 +6,6 @@ function Analysis({ oview, price }) {
   const valueIndexPercent = Math.abs(parseInt(valueIndex * 100)) + "%";
   const peratio = Number(oview.ForwardPE);
   const spy = 15.97;
-  const pediff = peratio - spy;
   if (check !== 0)
   return (
     <div className="metrics">
