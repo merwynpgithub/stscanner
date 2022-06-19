@@ -1,0 +1,73 @@
+.c {
+  font-family: 'Arial', sans-serif;
+  margin: 50px 15px;
+}
+.c-list {
+  margin: 20px ;
+  width: 8;
+  display: flex;
+  flex-wrap: wrap;
+  height: 60vh;
+  overflow-y: scroll;
+  border: 1px solid black;
+}
+.chart {
+  height: 300px;
+  width: 385px;
+  margin: 10px;
+}
+.c-small {
+  width: 100%;
+  position: relative;
+}
+.c-small button {
+  border: none;
+  color: green;
+  font-size: 25px;
+  font-weight: 900;
+  background-color: transparent;
+}
+.c-big {
+  width: 50%;
+  margin: auto;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 99;
+  background-color: white;
+  transition: width 2s;
+}
+.c-big button {
+  border: none;
+  font-size: 25px;
+  color: red;
+  font-weight: 900;
+  background-color: transparent;
+}
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  z-index: 50;
+}
+.btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .btn{
+   display: none;
+  }
+
+  .chart {
+    height: 200px;
+    width: 285px;
+    margin: 5px;
+  }
+}

@@ -1,0 +1,32 @@
+.metrics {
+  font-family: 'Arial', sans-serif;
+  margin: 50px 15px;
+  /* height: 15vh; */
+}
+.title {
+  max-width: 300px;
+  margin: 0 10px;
+  font-weight: 900;
+}
+.m-d {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: start;
+}
+.m {
+  width: 200px;
+  margin: 0 50px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.m-id, .m-data {
+  font-size: 14px;
+}
+.m-data {
+  text-align: right;
+}
+.analysis {
+  font-size: 14px;
+}
