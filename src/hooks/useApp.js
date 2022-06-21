@@ -20,7 +20,8 @@ function useApp() {
     .then(res => {
       const check = Object.keys(res.data).length;
       const maxCheck = res.data["Ismaxedout"];
-      if (check !== 0 && maxCheck === false) {
+      if (check === 1 ) setError("Enter a valid ticker, eg. AAPL, SHOP");
+      if (check > 1 && maxCheck === false) {
         setError("");
         setOview(res.data);
 
@@ -55,11 +56,10 @@ function useApp() {
         .catch(err => setError("Failed to get data"));
 
         setSearch("");
-      } else if (maxCheck === true) {
+      } 
+      if (maxCheck === true) {
         setError("Please wait and try in some time");
-      } else {
-        setError("Enter a valid ticker, eg. AAPL, SHOP");
-      }
+      } 
     })
     .catch(err => setError("Failed to get data"));
      
