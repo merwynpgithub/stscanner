@@ -19,7 +19,7 @@ function Analysis({ oview, price }) {
       </h4>
       <h4>Cash flow should be positive and rise annually/quarterly.</h4>
       <h4>Debt should reduce or be constant with time generally.</h4>
-      <h4>Shares Outstanding should reduce with time indicating Buyback and increase in shareholder value. Is it is rising then it indicates dilution </h4>
+      <h4>Shares Outstanding should reduce with time indicating <span style={{color: "green", fontWeight: "bold"}}> Buyback</span> and increase in shareholder value. If it is rising then it indicates <span style={{color: "red", fontWeight: "bold"}}> Dilution</span>.</h4>
       <p style={{fontSize: "12px", fontWeight: "bold"}}>**This app can be improved with premium access to market data. </p>
       <p style={{fontSize: "12px", fontWeight: "bold"}}>**Free developer api has limited data and requests. </p>
 

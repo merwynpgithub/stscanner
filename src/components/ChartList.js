@@ -42,7 +42,7 @@ function ChartList({ oview, inc, price, cf, bal}) {
           <BarChart info={bal} name={name} type="debt" horizon={horizon} bgcolor="rgba(244, 136, 145, 0.5)" bdcolor="rgba(64, 182, 150, 0)" />
         </div>
         <div className="chart">
-          <BarChart info={bal} name={name} type="stock" horizon={horizon} bgcolor="rgba(244, 136, 145, 0.5)" bdcolor="rgba(64, 182, 150, 0)" />
+          <BarChart info={bal} name={name} type="stock" horizon={horizon} bgcolor="rgba(163, 170, 145, 0.5)" bdcolor="rgba(64, 182, 150, 0)" />
         </div>
       </div>
 
