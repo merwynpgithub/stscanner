@@ -32,7 +32,7 @@ function App() {
   const cfCheck = Object.keys(cf).length;
 
   return (
-    <div style={{height: "150vh",backgroundColor: darkMode ? "#222" : "white", color: darkMode && "white", transition: "0.3s"}}>
+    <div className="t-mode" style={{backgroundColor: darkMode ? "#222" : "white", color: darkMode && "white", transition: "0.3s"}}>
       <Toggle />
       <Intro name={name}/>
       <Main search={search} setSearch={setSearch} handleClick={handleClick} error={error} />
