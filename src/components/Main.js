@@ -4,7 +4,7 @@ import './styles/main.css';
 
 function Main({ name, search, setSearch, handleClick, error }) {
   if (name === "")
-    return <div className="lds-dual-ring"></div>;
+    return <div className="loader"></div>;
 
   if (name !== "")
     return (

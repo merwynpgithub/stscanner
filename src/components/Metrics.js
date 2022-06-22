@@ -40,7 +40,7 @@ function Metrics({ oview, price }) {
       <div className="m">
         <div className= "m-id">
           <p>52-wk high</p>
-          <p>52-wk high</p>
+          <p>52-wk low</p>
         </div>
         <div className="m-data">
           <p>{oview["52WeekHigh"]}</p>
