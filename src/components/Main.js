@@ -2,8 +2,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './styles/main.css';
 
-function Main({ search, setSearch, handleClick, error }) {
-  
+function Main({ name, search, setSearch, handleClick, error }) {
+  if (name === "")
+    return <div className="lds-dual-ring"></div>;
   return (
     <div className="main">
       <form>

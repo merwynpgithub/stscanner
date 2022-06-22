@@ -36,7 +36,7 @@ function App() {
     <div className="t-mode" style={{backgroundColor: darkMode ? "#222" : "white", color: darkMode && "white", transition: "0.3s"}}>
       <Toggle />
       <Intro name={name}/>
-      <Main search={search} setSearch={setSearch} handleClick={handleClick} error={error} />
+      <Main name={name} search={search} setSearch={setSearch} handleClick={handleClick} error={error} />
       {cprice !== 0 && <Metrics oview={oview} price={cprice} />}
       {cprice !== 0 && incCheck !== 0 && cfCheck!== 0 && balCheck!== 0 &&
       <ChartList oview={oview} inc={inc} price={price} cf={cf} bal={bal} />}
