@@ -71,14 +71,12 @@
     const labelName = name + " Debt (Billions)";
 
     const labelData = [];
-    data.forEach(data => labelData.push(data.fiscalDateEnding));
+    data[horizon].forEach(data => labelData.push(data.fiscalDateEnding));
     labelData.reverse();
 
     const statData = [];
-    data.forEach(data => {
-      const longTermDebt = parseInt(data.longTermDebt) / Math.pow(10, 9);
-      const currentLiabilities = parseInt(data.totalCurrentLiabilities) / Math.pow(10, 9);
-      const debt = longTermDebt + currentLiabilities;
+    data[horizon].forEach(data => {
+      const debt = parseInt(data.totalLiabilities) / Math.pow(10, 9);
       statData.push(debt);
     });
     statData.reverse();

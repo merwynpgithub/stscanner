@@ -3,7 +3,7 @@ import './styles/chart.css';
 import BarChart from './BarChart';
 import LineChart from './LineChart';
 
-function ChartList({ oview, inc, price, cf}) {
+function ChartList({ oview, inc, price, cf, bal}) {
   const [horizon, setHorizon] = useState("quarterlyReports");
   const check = Object.keys(inc).length;
   const name = oview.Symbol;
@@ -38,9 +38,9 @@ function ChartList({ oview, inc, price, cf}) {
         <div className="chart">
           <BarChart info={cf} name={name} type="cash_flow" horizon={horizon} bgcolor="rgba(64, 182, 150, 0.5)" bdcolor="rgba(64, 182, 150, 0)" />
         </div>
-        {/* <div className="chart">
+        <div className="chart">
           <BarChart info={bal} name={name} type="debt" horizon={horizon} bgcolor="rgba(64, 182, 150, 0.5)" bdcolor="rgba(64, 182, 150, 0)" />
-        </div> */}
+        </div>
       </div>
 
     </div>

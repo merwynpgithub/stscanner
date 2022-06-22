@@ -18,6 +18,7 @@ function Analysis({ oview, price }) {
       <h4>In the current high interest rate environment, <span style={{color: "green", fontWeight: "bold"}}>Free Cash Flow</span> is important to analyze the company's sustained growth.
       </h4>
       <h4>Cash flow should be positive and rise annually/quarterly.</h4>
+      <h4>Debt should reduce or be constant with time generally.</h4>
       <p style={{fontSize: "12px", fontWeight: "bold"}}>**This app can be improved with premium access to market data. </p>
       <p style={{fontSize: "12px", fontWeight: "bold"}}>**Free developer api has limited data and requests. </p>
 

@@ -12,7 +12,8 @@ import Analysis from './components/Analysis';
 import axios from 'axios';
 
 function App() {
-  const { search, setSearch, handleClick, error, oview, inc, price, cf } = useApp();
+  const { search, setSearch, handleClick, error, oview, inc, price, cf, bal } = useApp();
+  console.log(bal);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
@@ -30,6 +31,7 @@ function App() {
   }
   const incCheck = Object.keys(inc).length;
   const cfCheck = Object.keys(cf).length;
+  const balCheck = Object.keys(bal).length
 
   return (
     <div className="t-mode" style={{backgroundColor: darkMode ? "#222" : "white", color: darkMode && "white", transition: "0.3s"}}>
@@ -37,7 +39,8 @@ function App() {
       <Intro name={name}/>
       <Main search={search} setSearch={setSearch} handleClick={handleClick} error={error} />
       {cprice !== 0 && <Metrics oview={oview} price={cprice} />}
-      {cprice !== 0 && incCheck !== 0 && cfCheck!== 0 && <ChartList oview={oview} inc={inc} price={price} cf={cf} />}
+      {cprice !== 0 && incCheck !== 0 && cfCheck!== 0 && balCheck!== 0 &&
+      <ChartList oview={oview} inc={inc} price={price} cf={cf} bal={bal} />}
       {cprice !== 0 && incCheck !== 0 && cfCheck!== 0 && <Analysis oview={oview} price={cprice}/>}
     </div>
   );

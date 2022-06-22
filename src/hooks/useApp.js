@@ -11,6 +11,7 @@ function useApp() {
   const [inc, setInc] = useState({});
   const [price, setPrice] = useState({});
   const [cf, setCf] = useState({});
+  const [bal, setBal] = useState({});
 
   const handleClick = e => {
     e.preventDefault();
@@ -55,6 +56,15 @@ function useApp() {
         })
         .catch(err => setError("Failed to get data"));
 
+        //set balance data
+        const balUrl = "/ticker/" + search + "/bal";
+        axios.get(balUrl)
+        .then(res => {
+          const check2 = Object.keys(res.data).length;
+          if (check2 !== 0)
+          setBal(res.data);
+        })
+
         setSearch("");
       } 
       if (maxCheck === true) {
@@ -66,7 +76,7 @@ function useApp() {
   } 
 
   return {
-    search, setSearch, handleClick, error, oview, inc, price, cf
+    search, setSearch, handleClick, error, oview, inc, price, cf, bal
   };
 }
 
