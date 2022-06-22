@@ -13,7 +13,6 @@ import axios from 'axios';
 
 function App() {
   const { search, setSearch, handleClick, error, oview, inc, price, cf, bal } = useApp();
-  console.log(bal);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
