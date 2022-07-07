@@ -4,7 +4,7 @@ function Analysis({ oview, price }) {
   const sma200 = Number(oview["200DayMovingAverage"]);
   const valueIndex = (sma200 - price) / sma200;
   const valueIndexPercent = Math.abs(parseInt(valueIndex * 100)) + "%";
-  const peratio = Number(oview.ForwardPE);
+  const peratio = Number(oview.ForwardPE) || 0;
   const spy = 15.97;
   if (check !== 0)
   return (
@@ -12,8 +12,8 @@ function Analysis({ oview, price }) {
       <div className= "analysis">
       {valueIndex <= 0 && <h4>{oview.Name} trades at <span style={{color: "green", fontWeight: "bold"}}> {price}$</span> and is <span style={{color: "green", fontWeight: "bold"}}> NOT UNDERVALUED</span> relative to its 200 Day Moving Average by {valueIndexPercent}</h4>}
       {valueIndex > 0 && <h4>{oview.Name} trades at <span style={{color: "green", fontWeight: "bold"}}> {price}$</span> and is <span style={{color: "red", fontWeight: "bold"}}>UNDERVALUED</span> relative to its 200 Day Moving Average by {valueIndexPercent}</h4>}
-      <h4>{oview.Name} trades at <span style={{color: "red", fontWeight: "bold"}}> {peratio}</span> times earnings.
-      </h4>
+      {peratio !== 0 && <h4>{oview.Name} trades at <span style={{color: "red", fontWeight: "bold"}}> {peratio}</span> times earnings.
+      </h4>}
       <h4>The S&P 500 trades at <span style={{color: "green", fontWeight: "bold"}}> {spy}</span> times earnings.</h4>
       <h4>In the current high interest rate environment, <span style={{color: "green", fontWeight: "bold"}}>Free Cash Flow</span> is important to analyze the company's sustained growth.
       </h4>
