@@ -17,11 +17,22 @@ function useApp() {
     e.preventDefault();
 
     const url = "/ticker/" + search;
+    if (!search) {
+      setError("Enter a valid ticker, eg. AAPL, SHOP");
+      return;
+    }
     axios.get(url)
     .then(res => {
       const check = Object.keys(res.data).length;
       const maxCheck = res.data["Ismaxedout"];
-      if (check === 1 ) setError("Enter a valid ticker, eg. AAPL, SHOP");
+      if (check === 1 ) {
+        setError("Enter a valid ticker, eg. AAPL, SHOP");
+        return;
+      }
+      if (maxCheck === true) {
+        setError("Please wait and try in some time");
+        return;
+      }
       if (check > 1 && maxCheck === false) {
         setError("");
         setOview(res.data);
@@ -67,9 +78,7 @@ function useApp() {
 
         setSearch("");
       } 
-      if (maxCheck === true) {
-        setError("Please wait and try in some time");
-      } 
+       
     })
     .catch(err => setError("Failed to get data"));
      
