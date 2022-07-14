@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import Toggle from './components/Toggle';
 import Main from './components/Main';
 // import { ThemeContext } from './context';
