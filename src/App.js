@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
-import Toggle from './components/Toggle';
+// import Toggle from './components/Toggle';
 import Main from './components/Main';
-import { ThemeContext } from './context';
+// import { ThemeContext } from './context';
 import './App.css';
 import Intro from './components/Intro';
 import useApp from './hooks/useApp';
@@ -13,8 +13,8 @@ import axios from 'axios';
 
 function App() {
   const { search, setSearch, handleClick, error, oview, inc, price, cf, bal } = useApp();
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  // const theme = useContext(ThemeContext);
+  // const darkMode = theme.state.darkMode;
 
   //make an axios req to pass name to intro and start heroku server
   const [name, setName] = useState("");
@@ -33,8 +33,8 @@ function App() {
   const balCheck = Object.keys(bal).length
 
   return (
-    <div className="t-mode" style={{backgroundColor: darkMode ? "#222" : "white", color: darkMode && "white", transition: "0.3s"}}>
-      <Toggle />
+    <div className="t-mode">
+      
       <Intro name={name}/>
       <Main name={name} search={search} setSearch={setSearch} handleClick={handleClick} error={error} />
       {cprice !== 0 && <Metrics oview={oview} price={cprice} />}
