@@ -1,6 +1,6 @@
 import './styles/intro.css';
 function Intro({ name }) {
-  if (name === "") 
+  if (name === "" || !name) 
     return (
       <div className="intro">
         <h2>Loading...</h2>
